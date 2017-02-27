@@ -1,8 +1,8 @@
 ## lc-tools
 
-### Important note
+### Important notes
 
-Never forget to set `LC_ALL=C`
+Never forget to set `LC_ALL=C` and `sort -u` input files.
 
 
 ### Building
