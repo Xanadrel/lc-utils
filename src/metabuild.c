@@ -26,11 +26,6 @@ typedef struct {
     int line_count;
 } meta_t;
 
-static int cmp_cache (const void *p1, const void *p2)
-{
-    return strcmp (p1, p2);
-}
-
 static int cmp_cache_len (const void *p1, const void *p2, const size_t len)
 {
     return strncmp (p1, p2, len);

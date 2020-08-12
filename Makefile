@@ -1,5 +1,5 @@
 ##
-##  Makefile
+## LC utils Makefile
 ##
 
 CFLAGS += -Wall -W -pipe -O2 -std=c99
@@ -34,6 +34,7 @@ linux:
 	${CC_LINUX} ${CFLAGS_LINUX} ${LDFLAGS_LINUX} -o dgrep2.bin src/dgrep2.c	
 	${CC_LINUX} ${CFLAGS_LINUX} ${LDFLAGS_LINUX} -o metagen.exe src/metagen.c
 	${CC_LINUX} ${CFLAGS_LINUX} ${LDFLAGS_LINUX} -o metabuild.exe src/metabuild.c
+	${CC_LINUX} ${CFLAGS_LINUX} ${LDFLAGS_LINUX} -o rli2_len.exe src/rli2_len.c
 	
 ##
 ## WINDOWS
@@ -51,4 +52,5 @@ windows:
 	${CC_WINDOWS} ${CFLAGS_WINDOWS} -o dgrep2.exe src/dgrep2.c
 	${CC_WINDOWS} ${CFLAGS_WINDOWS} -o metagen.exe src/metagen.c
 	${CC_WINDOWS} ${CFLAGS_WINDOWS} -o metabuild.exe src/metabuild.c
+	${CC_WINDOWS} ${CFLAGS_WINDOWS} -o rli2_len.exe src/rli2_len.c
 	

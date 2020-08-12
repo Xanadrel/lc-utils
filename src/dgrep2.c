@@ -93,7 +93,6 @@ int main (int argc, char *argv[])
         }
         else if (comp > 0 && !matched) // mid/2
         {
-
             if (read_len > 0 && memory_len == read_len && cmp_cache(line_buf, memory, read_len) == 0) break;
             size_max = size_mid + extra_read;
             size_mid = (size_min + size_max) / 2;           
