@@ -8,9 +8,10 @@
 #include "utils.c"
 
 /**
- * name...: dict.c
- * author.: Xanadrel
- * desc...: prints the dictionary/wordlist (plain) using a <leftlist> (hash[:salt]), and a <foundfile> (hash[:salt]:plain)
+ * Name...: dict.c
+ * Author.: Xanadrel
+ * Desc...: Prints the dictionary/wordlist (plain) using a <leftlist> (hash[:salt]), and a <foundfile> (hash[:salt]:plain)
+ * License.: MIT
  */
 
 static int cmp_cache (const void *p1, const void *p2, const int len)

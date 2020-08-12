@@ -8,9 +8,10 @@
 #include "utils.c"
 
 /**
- * name...: leftlist.c
- * author.: Xanadrel
- * desc...: prints the leftlist (hash[:salt]) using a <hashfile> (hash[:salt]), and a <foundfile> (hash[:salt]:plain)
+ * Name...: leftlist.c
+ * Author.: Xanadrel
+ * Desc...: Prints the leftlist (hash[:salt]) using a <hashfile> (hash[:salt]), and a <foundfile> (hash[:salt]:plain)
+ * License.: MIT
  */
 
 static int cmp_cache (const void *p1, const void *p2, const int len)

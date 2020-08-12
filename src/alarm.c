@@ -1,16 +1,21 @@
+#define _POSIX_SOURCE
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <sys/time.h>
 #include <sys/signal.h>
 #include <sys/wait.h>
+#include <sys/types.h>
+#include <unistd.h>
+
 
 #include <errno.h>
 
 /**
- * name...: alarm.c
- * author.: not Xanadrel
- * desc...: stops a cmd ran through it if the time exceeds <secs>
+ * Name...: alarm.c
+ * Author.: not Xanadrel
+ * Desc...: Stops a cmd ran through it if the time exceeds <secs>
+ * License.: Unknown
  */
 
 // gcc -Wall -O3 -o alarm alarm.c
