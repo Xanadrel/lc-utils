@@ -8,15 +8,15 @@
 #include "utils.c"
 
 /**
- * Name....: rli2_len.c
+ * Name....: cmp_rli2.c
  * Author..: Xanadrel
- * Desc....: Same as rli2 but using line length from infile for the comparison
+ * Desc....: Get percentage of similar lines between two files
  * License.: MIT
  */
 
-static int cmp_cache(const void *p1, const void *p2, const int len)
+static int cmp_cache(const void *p1, const void *p2)
 {
-    return strncmp(p1, p2, len);
+    return strcmp(p1, p2);
 }
 
 int main(int argc, char *argv[])
@@ -48,27 +48,27 @@ int main(int argc, char *argv[])
         return (-1);
     }
 
-    int len;
     char line_buf1[BUFSIZ];
     char line_buf2[BUFSIZ];
 
-    // Read first line of each file
-    if ((len = fgetl(fd1, BUFSIZ, line_buf1)) == -1) memset(line_buf1, 0, BUFSIZ);
+    if (fgetl(fd1, BUFSIZ, line_buf1) == -1) memset(line_buf1, 0, BUFSIZ);
     if (fgetl(fd2, BUFSIZ, line_buf2) == -1) memset(line_buf2, 0, BUFSIZ);
 
-    int comp;
+    int comp = 1;
+    uint similar = 0;
+    uint total = 0;
 
     while (!feof(fd1) && !feof(fd2))
     {
-        comp = cmp_cache(line_buf1, line_buf2, len);
+        comp = cmp_cache(line_buf1, line_buf2);
 
         if (comp == 0)
         {
-            puts(line_buf2);
-
-            // Read a line from both files
-            if ((len = fgetl(fd1, BUFSIZ, line_buf1)) == -1) memset(line_buf1, 0, BUFSIZ);
+            if (fgetl(fd1, BUFSIZ, line_buf1) == -1) memset(line_buf1, 0, BUFSIZ);
             if (fgetl(fd2, BUFSIZ, line_buf2) == -1) memset(line_buf2, 0, BUFSIZ);
+
+            similar++;
+            total++;
         }
         else if (comp > 0)
         {
@@ -76,12 +76,27 @@ int main(int argc, char *argv[])
         }
         else if (comp < 0)
         {
-            if ((len = fgetl(fd1, BUFSIZ, line_buf1)) == -1) memset(line_buf1, 0, BUFSIZ);
+            if (fgetl(fd1, BUFSIZ, line_buf1) == -1) memset(line_buf1, 0, BUFSIZ);
+            total++;
         }
+    }
+
+    if (!feof (fd1) && comp == 0) similar++;
+
+    while (!feof (fd1))
+    {
+        if (fgetl (fd1, BUFSIZ, line_buf1) == -1)
+        {
+            memset (line_buf1, 0, BUFSIZ);
+            continue;
+        }
+        total++;
     }
 
     fclose(fd1);
     fclose(fd2);
+
+    printf("%s:%s %f%%\n", infile, removefile, (float)100 * (float)similar / (float)total);
 
     return 0;
 }
