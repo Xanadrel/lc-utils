@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 
     int comp = 1;
     uint similar = 0;
-    uint total = 0;
+    uint total = 1;
 
     while (!feof(fd1) && !feof(fd2))
     {

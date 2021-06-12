@@ -8,9 +8,9 @@
 #include "utils.c"
 
 /**
- * Name...: leftlist.c
- * Author.: Xanadrel
- * Desc...: Prints the leftlist (hash[:salt]) using a <hashfile> (hash[:salt]), and a <foundfile> (hash[:salt]:plain)
+ * Name....: leftlist.c
+ * Author..: Xanadrel
+ * Desc....: Prints the leftlist (hash[:salt]) using a <hashfile> (hash[:salt]), and a <foundfile> (hash[:salt]:plain)
  * License.: MIT
  */
 
@@ -26,7 +26,7 @@ int main (int argc, char *argv[])
 
   if (argc != 3)
   {
-    fprintf (stderr, "usage: %s <hashfile> <foundfile>\n", argv[0]);
+    fprintf (stderr, "usage: %s <listfile> <foundfile>\n", argv[0]);
 
     return (-1);
   }

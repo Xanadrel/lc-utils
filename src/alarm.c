@@ -12,9 +12,9 @@
 #include <errno.h>
 
 /**
- * Name...: alarm.c
- * Author.: not Xanadrel
- * Desc...: Stops a cmd ran through it if the time exceeds <secs>
+ * Name....: alarm.c
+ * Author..: not Xanadrel
+ * Desc....: Stops a cmd ran through it if the time exceeds <secs>
  * License.: Unknown
  */
 

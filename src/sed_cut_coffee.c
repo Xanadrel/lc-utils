@@ -8,9 +8,9 @@
 #include "utils.c"
 
 /**
- * Name...: sed_cut_coffee.c
- * Author.: Xanadrel
- * Desc...: Prints lines removing leading count & spaces (output of uniq -c), replaces cut -bX-
+ * Name....: sed_cut_coffee.c
+ * Author..: Xanadrel
+ * Desc....: Prints lines removing leading count & spaces (output of uniq -c), replaces cut -bX-
  * License.: MIT
  */
 

@@ -10,7 +10,7 @@
 /**
  * Name....: rli2_len.c
  * Author..: Xanadrel
- * Desc....: Same as rli2 but using line length from infile for the comparison
+ * Desc....: Generate lines similar to both files but compare using length of infile lines
  * License.: MIT
  */
 
